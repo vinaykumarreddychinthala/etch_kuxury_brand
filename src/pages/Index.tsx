@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 import { useScrollFadeIn } from "@/hooks/useScrollFadeIn";
 import Layout from "@/components/Layout";
-import heroImg from "@/assets/hero-tray.jpg";
-import editorialImg from "@/assets/editorial-banner.jpg";
+import heroImg from "@/assets/hero-tray.png";
+import editorialImg from "@/assets/editioncircle.png";
 import productBlackSilver from "@/assets/product-black-silver.jpg";
 import productOceanBlue from "@/assets/product-ocean-blue.jpg";
 import productMonochrome from "@/assets/product-monochrome.jpg";
 import productCoasters from "@/assets/product-coasters.jpg";
+import item1 from "@/assets/item1.jpeg";
+import item2 from "@/assets/item2.jpeg";
+import item3 from "@/assets/item3.jpeg";
+import item4 from "@/assets/item4.jpeg";
 
 const craftFeatures = [
   {
@@ -31,6 +35,10 @@ const signaturePieces = [
   { name: "Ocean Drift Tray", price: "₹5,200", image: productOceanBlue },
   { name: "Monochrome Board", price: "₹3,800", image: productMonochrome },
   { name: "Noir Coaster Set", price: "₹1,800", image: productCoasters },
+    { name: "Golden River Tray", price: "₹5,800", image: item1 },
+  { name: "Walnut Glow Board", price: "₹4,200", image: item2 },
+  { name: "Black Marble Resin Tray", price: "₹6,200", image: item3 },
+  { name: "Emerald Flow Tray", price: "₹6,500", image: item4 },
 ];
 
 export default function Index() {
@@ -40,7 +48,7 @@ export default function Index() {
     <Layout>
       <div ref={containerRef}>
         {/* Hero */}
-        <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <section className="hero-section relative h-screen flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
             <img
               src={heroImg}
@@ -49,7 +57,7 @@ export default function Index() {
             />
             <div className="absolute inset-0 bg-foreground/30" />
           </div>
-          <div className="relative z-10 text-center px-6 max-w-3xl">
+          <div className="relative z-10 text-center px-6 max-w-3xl mt-[10vh]">
             <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-light text-cream tracking-wide leading-tight animate-fade-up">
               Carved in Wood.
               <br />
@@ -116,11 +124,11 @@ export default function Index() {
           <p className="text-center text-muted-foreground text-sm tracking-widest uppercase mb-12">
             Our most coveted creations
           </p>
-          <div className="flex gap-6 overflow-x-auto px-6 pb-6 snap-x snap-mandatory scrollbar-hide">
+         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-8">
             {signaturePieces.map((p) => (
               <div
                 key={p.name}
-                className="group snap-start flex-shrink-0 w-72 md:w-80"
+                className="group"
               >
                 <div className="relative overflow-hidden aspect-square bg-secondary">
                   <img

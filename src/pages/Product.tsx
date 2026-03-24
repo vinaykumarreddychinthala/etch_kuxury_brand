@@ -17,16 +17,12 @@ import productBlackSilver from "@/assets/product-black-silver.jpg";
 import productRiverTable from "@/assets/product-river-table.jpg";
 import productCoasters from "@/assets/product-coasters.jpg";
 import productNamePlaque from "@/assets/product-name-plaque.jpg";
+import item1 from "@/assets/item1.jpeg";
+import item2 from "@/assets/item2.jpeg";
+import item3 from "@/assets/item3.jpeg";
+import item4 from "@/assets/item4.jpeg";
 
-// Helpers
-const defaultColors = [
-  { name: "Seascape", value: "#2673a3" },
-  { name: "Midnight", value: "#42485e" },
-  { name: "Olive", value: "#6e8011" },
-  { name: "Sky", value: "#a2c1f4" },
-  { name: "Plum", value: "#652174" },
-  { name: "Amber", value: "#d37410" },
-];
+
 
 const getProductDetails = (id: string | undefined) => {
   const productsDatabase: Record<string, any> = {
@@ -43,12 +39,37 @@ const getProductDetails = (id: string | undefined) => {
     "ocean-drift-tray": { title: "Ocean Drift Tray", price: "₹5,200", images: [productOceanBlue, productMonochrome, productBlackSilver] },
     "monochrome-board": { title: "Monochrome Board", price: "₹3,800", images: [productMonochrome, productBlackSilver, productOceanBlue] },
     "noir-coaster-set": { title: "Noir Coaster Set", price: "₹1,800", images: [productCoasters, productMonochrome, productBlackSilver] },
+    // 🔥 YOUR NEW ITEMS
+
+"golden-river-tray": {
+  title: "Golden River Tray",
+  price: "₹5,800",
+  images: [item1, item2, item3, item4],
+},
+
+"walnut-glow-board": {
+  title: "Walnut Glow Board",
+  price: "₹4,200",
+  images: [item2, item1, item3],
+},
+
+"black-marble-resin-tray": {
+  title: "Black Marble Resin Tray",
+  price: "₹6,200",
+  images: [item3, item1, item2],
+},
+
+"emerald-flow-tray": {
+  title: "Emerald Flow Tray",
+  price: "₹6,500",
+  images: [item4, item1, item2],
+},
   };
 
   const found = id ? productsDatabase[id] : null;
   
   if (found) {
-    return { ...found, id, rating: 4.9, reviews: 101, colors: defaultColors };
+    return { ...found, id, rating: 4.9, reviews: 101, };
   }
   
   // Fallback if not found
@@ -59,7 +80,7 @@ const getProductDetails = (id: string | undefined) => {
     rating: 4.9, 
     reviews: 84, 
     images: [productOceanBlue, productMonochrome, productBlackSilver], 
-    colors: defaultColors 
+    
   };
 };
 
@@ -68,7 +89,6 @@ export default function Product() {
   const product = getProductDetails(id);
   
   const [selectedImage, setSelectedImage] = useState(0);
-  const [selectedColor, setSelectedColor] = useState(product.colors[0]);
   const [quantity, setQuantity] = useState(1);
   const [isChatOpen, setIsChatOpen] = useState(false);
 
@@ -89,19 +109,21 @@ export default function Product() {
             {/* Thumbnails */}
             <div className="flex md:flex-col gap-3 overflow-x-auto md:overflow-y-auto no-scrollbar md:w-24 shrink-0">
               {product.images.map((img, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setSelectedImage(idx)}
-                  className={`relative aspect-square shrink-0 md:w-full overflow-hidden border-2 transition-colors ${
-                    selectedImage === idx ? "border-foreground" : "border-transparent"
-                  }`}
-                >
-                  <img
-                    src={img}
-                    alt={`${product.title} view ${idx + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </button>
+               <button
+  key={idx}
+  onClick={() => setSelectedImage(idx)}
+  className={`relative aspect-square shrink-0 md:w-full overflow-hidden border-2 transition-all duration-300 ease-in-out transform ${
+    selectedImage === idx
+      ? "border-foreground scale-105 shadow-lg"
+      : "border-transparent hover:scale-105 hover:shadow-md"
+  }`}
+>
+  <img
+    src={img}
+    alt={`${product.title} view ${idx + 1}`}
+    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+  />
+</button>
               ))}
             </div>
 
@@ -147,23 +169,7 @@ export default function Product() {
 
             <p className="text-xl mb-8 text-[#2c2c2c]">{product.price}</p>
 
-            <div className="mb-8">
-              <p className="text-sm mb-3 text-[#2c2c2c]">Colour: <span className="text-muted-foreground">{selectedColor.name}</span></p>
-              <div className="flex gap-2">
-                {product.colors.map((color) => (
-                  <button
-                    key={color.name}
-                    onClick={() => setSelectedColor(color)}
-                    className={`w-8 h-8 md:w-10 md:h-10 border transition-all ${
-                      selectedColor.name === color.name ? "border-2 border-foreground p-[2px]" : "border-transparent"
-                    }`}
-                    aria-label={`Select ${color.name} color`}
-                  >
-                    <div className="w-full h-full border border-black/10" style={{ backgroundColor: color.value }} />
-                  </button>
-                ))}
-              </div>
-            </div>
+           
 
             <button className="w-full py-4 bg-[#4a4a4a] hover:bg-[#3a3a3a] text-white text-sm font-medium transition-colors mb-6 tracking-wide">
               Add Engraving & Gift Note Here
@@ -184,9 +190,7 @@ export default function Product() {
                   <Plus className="w-4 h-4 text-[#2c2c2c]" />
                 </button>
               </div>
-              <button className="flex-1 bg-[#4a4a4a] hover:bg-[#3a3a3a] text-white font-medium transition-colors tracking-wide">
-                Add to cart
-              </button>
+              
             </div>
 
             <button className="w-full py-4 border border-[#d1d1d1] bg-[#f2f0ea] hover:bg-[#e8e6e0] text-[#2c2c2c] font-medium transition-colors mb-12 tracking-wide">
