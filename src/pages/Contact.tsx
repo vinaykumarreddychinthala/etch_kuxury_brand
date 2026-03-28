@@ -2,22 +2,40 @@ import { useState } from "react";
 import { useScrollFadeIn } from "@/hooks/useScrollFadeIn";
 import Layout from "@/components/Layout";
 
-const productTypes = [
-  "Serving Tray",
-  "Cheese Board",
-  "River Table",
-  "Coaster Set",
-  "Name Plaque",
-  "Custom Piece",
-];
-
 export default function Contact() {
   const containerRef = useScrollFadeIn();
   const [submitted, setSubmitted] = useState(false);
 
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e: any) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+
+    const whatsappNumber = "919831232374";
+
+    const text = `Hello, I want to place an order.
+
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+Message: ${formData.message}`;
+
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+
+    window.open(url, "_blank");
   };
 
   return (
@@ -41,6 +59,8 @@ export default function Contact() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="fade-in-section space-y-6">
+              
+              {/* Name + Email */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">
@@ -48,7 +68,9 @@ export default function Contact() {
                   </label>
                   <input
                     required
+                    name="name"
                     type="text"
+                    onChange={handleChange}
                     className="w-full bg-transparent border-b border-border py-3 text-foreground focus:border-primary outline-none transition-colors"
                     placeholder="Your full name"
                   />
@@ -59,68 +81,38 @@ export default function Contact() {
                   </label>
                   <input
                     required
+                    name="email"
                     type="email"
+                    onChange={handleChange}
                     className="w-full bg-transparent border-b border-border py-3 text-foreground focus:border-primary outline-none transition-colors"
                     placeholder="your@email.com"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">
-                    WhatsApp Number
-                  </label>
-                  <input
-                    type="tel"
-                    className="w-full bg-transparent border-b border-border py-3 text-foreground focus:border-primary outline-none transition-colors"
-                    placeholder="+91 XXXXX XXXXX"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">
-                    Product Type
-                  </label>
-                  <select className="w-full bg-transparent border-b border-border py-3 text-foreground focus:border-primary outline-none transition-colors">
-                    <option value="">Select a type</option>
-                    {productTypes.map((t) => (
-                      <option key={t} value={t}>
-                        {t}
-                      </option>
-                    ))}
-                  </select>
-                </div>
+              {/* WhatsApp Number ONLY (Product Type removed) */}
+              <div>
+                <label className="block text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">
+                  WhatsApp Number
+                </label>
+                <input
+                  name="phone"
+                  type="tel"
+                  onChange={handleChange}
+                  className="w-full bg-transparent border-b border-border py-3 text-foreground focus:border-primary outline-none transition-colors"
+                  placeholder="+91 XXXXX XXXXX"
+                />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">
-                    Preferred Size
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full bg-transparent border-b border-border py-3 text-foreground focus:border-primary outline-none transition-colors"
-                    placeholder='e.g. 12" × 8"'
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">
-                    Color Palette / Theme
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full bg-transparent border-b border-border py-3 text-foreground focus:border-primary outline-none transition-colors"
-                    placeholder="Black & silver, ocean blue, etc."
-                  />
-                </div>
-              </div>
-
+              {/* Message ONLY (Removed size + color palette) */}
               <div>
                 <label className="block text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">
                   Additional Message
                 </label>
                 <textarea
+                  name="message"
                   rows={4}
+                  onChange={handleChange}
                   className="w-full bg-transparent border-b border-border py-3 text-foreground focus:border-primary outline-none transition-colors resize-none"
                   placeholder="Any special requests or details..."
                 />
@@ -138,12 +130,12 @@ export default function Contact() {
           )}
         </section>
 
-        {/* Contact info */}
+        {/* Contact info (UNCHANGED) */}
         <section className="bg-dark-surface py-16 mt-16">
           <div className="max-w-3xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
               <p className="text-xs tracking-[0.2em] uppercase text-cream/40 mb-2">WhatsApp</p>
-              <p className="text-cream/80">+91 XXXXX XXXXX</p>
+              <p className="text-cream/80">+91 9831232374</p>
             </div>
             <div>
               <p className="text-xs tracking-[0.2em] uppercase text-cream/40 mb-2">Instagram</p>
