@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { useScrollFadeIn } from "@/hooks/useScrollFadeIn";
 import Layout from "@/components/Layout";
-import heroImg from "@/assets/hero-tray.png";
-import editorialImg from "@/assets/editioncircle.png";
+import hero1 from "@/assets/hero1.png";
+import yauuu from "@/assets/yauuu.jpeg";
 import productBlackSilver from "@/assets/product-black-silver.jpg";
 import productOceanBlue from "@/assets/product-ocean-blue.jpg";
 import productMonochrome from "@/assets/product-monochrome.jpg";
@@ -51,7 +51,7 @@ export default function Index() {
         <section className="hero-section relative h-screen flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
             <img
-              src={heroImg}
+              src={hero1}
               alt="Black and silver resin wood tray on white linen"
               className="w-full h-full object-cover"
             />
@@ -106,13 +106,13 @@ export default function Index() {
         {/* Editorial banner */}
         <section className="fade-in-section relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
           <img
-            src={editorialImg}
+            src={yauuu}
             alt="Dark resin close-up with silver swirls"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-foreground/50" />
           <p className="relative z-10 font-heading text-2xl md:text-4xl lg:text-5xl italic text-cream text-center px-6 max-w-3xl font-light leading-relaxed">
-            "No two pieces are ever the same."
+            "Matter - each piece is one of a kind."
           </p>
         </section>
 
