@@ -32,9 +32,15 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 md:py-5">
-        <Link to="/" className="font-script text-3xl md:text-4xl tracking-wide text-foreground">
-          etch
-        </Link>
+       <Link to="/" className="flex flex-col items-center leading-none text-foreground">
+  <span className="font-script text-3xl md:text-4xl tracking-wide">
+    etch
+  </span>
+  <span className="text-[10px] md:text-xs tracking-[0.4em] font-body mt-1 opacity-70">
+    -STUDIO-
+  </span>
+</Link>
+        
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-10">
