@@ -113,7 +113,7 @@ export default function Index() {
           />
           <div className="absolute inset-0 bg-foreground/50" />
           <p className="relative z-10 font-heading text-2xl md:text-4xl lg:text-5xl italic text-cream text-center px-6 max-w-3xl font-light leading-relaxed">
-            "Matter - Each pieces tells us its own story"
+            "Crafted with intention, made to be timeless"
           </p>
         </section>
 
