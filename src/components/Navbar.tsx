@@ -25,22 +25,24 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
           ? "bg-background/95 backdrop-blur-sm border-b border-primary/30"
-          : "bg-transparent"
-      }`}
+          : "bg-background/80 backdrop-blur-sm"
+        }`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 md:py-5">
-       <Link to="/" className="flex flex-col items-center leading-none text-foreground">
-  <span className="font-script text-3xl md:text-4xl tracking-wide">
-    etch
-  </span>
-  <span className="text-[10px] md:text-xs tracking-[0.4em] font-body mt-1 opacity-70">
-    -STUDIO-
-  </span>
-</Link>
-        
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3 md:py-4">
+        <Link to="/" className="flex items-center">
+          <img
+            src="/logo2.png"
+            alt="Etch Studio"
+            className="h-11 md:h-14 w-auto object-contain transition-transform duration-300 hover:scale-105"
+            style={{
+              mixBlendMode: "multiply",
+              filter: "drop-shadow(0 1px 3px rgba(0,0,0,0.06))",
+            }}
+          />
+        </Link>
+
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-10">
@@ -48,11 +50,10 @@ export default function Navbar() {
             <Link
               key={link.path}
               to={link.path}
-              className={`text-sm tracking-[0.15em] uppercase font-body transition-colors duration-300 ${
-                location.pathname === link.path
+              className={`text-sm tracking-[0.15em] uppercase font-body transition-colors duration-300 ${location.pathname === link.path
                   ? "text-primary"
                   : "text-foreground/70 hover:text-foreground"
-              }`}
+                }`}
             >
               {link.label}
             </Link>
@@ -75,20 +76,18 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-500 bg-background/98 backdrop-blur-sm ${
-          mobileOpen ? "max-h-80" : "max-h-0"
-        }`}
+        className={`md:hidden overflow-hidden transition-all duration-500 bg-background/98 backdrop-blur-sm ${mobileOpen ? "max-h-80" : "max-h-0"
+          }`}
       >
         <div className="flex flex-col items-center gap-6 py-8">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
-              className={`text-sm tracking-[0.2em] uppercase font-body ${
-                location.pathname === link.path
+              className={`text-sm tracking-[0.2em] uppercase font-body ${location.pathname === link.path
                   ? "text-primary"
                   : "text-foreground/70"
-              }`}
+                }`}
             >
               {link.label}
             </Link>

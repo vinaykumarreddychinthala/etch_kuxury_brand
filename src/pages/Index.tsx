@@ -14,19 +14,20 @@ import item4 from "@/assets/item4.jpeg";
 
 const craftFeatures = [
   {
-    icon: "🪵",
-    title: "Live-Edge Wood",
-    desc: "Each slab is hand-selected for its natural character, grain, and raw beauty.",
+    icon: "✦",
+    title: "One-of-a-Kind",
+    desc: "Every pour creates a piece that can never be replicated.",
   },
   {
     icon: "💎",
-    title: "Food-Safe Resin",
-    desc: "Premium epoxy infused with pigments and metallics, sealed for everyday use.",
+    title: "Sustainable",
+    desc: "Food Grade & Ecofriendly Materials Used",
   },
   {
-    icon: "✦",
-    title: "One-of-a-Kind",
-    desc: "No molds, no repeats. Every pour creates a piece that can never be replicated.",
+    icon: "🪵",
+    title: "Artisian Crafted",
+    // desc: "Each slab is hand-selected for its natural character, grain, and raw beauty.",
+    desc: "Hand Made With Care"
   },
 ];
 
@@ -112,7 +113,7 @@ export default function Index() {
           />
           <div className="absolute inset-0 bg-foreground/50" />
           <p className="relative z-10 font-heading text-2xl md:text-4xl lg:text-5xl italic text-cream text-center px-6 max-w-3xl font-light leading-relaxed">
-            "Matter - each piece is one of a kind."
+            "Matter - Each pieces tells us its own story"
           </p>
         </section>
 
@@ -126,9 +127,10 @@ export default function Index() {
           </p>
          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-8">
             {signaturePieces.map((p) => (
-              <div
+              <Link
                 key={p.name}
-                className="group"
+                to={`/product/${p.name.replace(/\s+/g, '-').toLowerCase()}`}
+                className="group block transition-opacity duration-300 hover:opacity-90"
               >
                 <div className="relative overflow-hidden aspect-square bg-secondary">
                   <img
@@ -136,20 +138,12 @@ export default function Index() {
                     alt={p.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/40 transition-all duration-500 flex items-center justify-center">
-                    <Link
-                      to={`/product/${p.name.replace(/\s+/g, '-').toLowerCase()}`}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 px-6 py-2 border border-cream text-cream text-xs tracking-[0.2em] uppercase hover:bg-cream hover:text-foreground"
-                    >
-                      Enquire Now
-                    </Link>
-                  </div>
                 </div>
-                <div className="mt-4">
+                <div className="mt-4 text-center sm:text-left">
                   <h3 className="font-heading text-lg tracking-wide">{p.name}</h3>
                   <p className="text-muted-foreground text-sm mt-1">{p.price}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>

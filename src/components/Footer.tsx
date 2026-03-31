@@ -6,8 +6,18 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="text-center md:text-left">
-            <p className="font-script text-3xl text-cream mb-2">etch</p>
-            <p className="font-heading text-lg italic text-cream/60">
+            <Link to="/">
+              <img
+                src="/logo2.png"
+                alt="Etch Studio"
+                className="h-12 md:h-14 w-auto object-contain transition-transform duration-300 hover:scale-105"
+                style={{
+                  filter: "invert(1) brightness(0.9) sepia(0.15)",
+                  mixBlendMode: "screen",
+                }}
+              />
+            </Link>
+            <p className="font-heading text-base italic text-cream/50 mt-1">
               Handcrafted with intention.
             </p>
           </div>

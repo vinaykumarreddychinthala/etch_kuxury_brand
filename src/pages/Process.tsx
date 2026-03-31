@@ -181,9 +181,9 @@ export default function AboutProcess() {
             <div className="reveal">
               <div className="md:sticky md:top-32">
                 <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-3">Founder</p>
-                <h2 className="font-heading text-4xl md:text-5xl font-light text-[#2c2c2c] mb-2">Pragya</h2>
-                <p className="text-sm text-muted-foreground mb-8">Agra → Delhi → Kolkata</p>
-                <div className="space-y-6 border-l border-[#d1d1d1] pl-5">
+                <h2 className="font-heading text-4xl md:text-5xl font-light text-[#2c2c2c] mb-2">Pragya Jain</h2>
+                {/* <p className="text-sm text-muted-foreground mb-8">Agra → Delhi → Kolkata</p> */}
+                {/* <div className="space-y-6 border-l border-[#d1d1d1] pl-5">
                   {[
                     { year: "Delhi",   label: "B.Com (Hons), Delhi University" },
                     { year: "Kolkata", label: "Moved after marriage. Art stayed." },
@@ -199,7 +199,7 @@ export default function AboutProcess() {
                       <p className="text-sm text-[#2c2c2c]">{item.label}</p>
                     </div>
                   ))}
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -243,9 +243,9 @@ export default function AboutProcess() {
           <div className="max-w-5xl mx-auto">
             <div className="reveal grid grid-cols-1 sm:grid-cols-3 gap-6">
               {[
-                { val: "3,000+", label: "Pieces handcrafted" },
-                { val: "3 yrs",  label: "Of resin mastery" },
-                { val: "100%",   label: "Made by hand" },
+                { val: "550+", label: "Engaged Customers" },
+                { val: "5 yrs", label: "Of resin mastery" },
+                { val: "100%", label: "Made by hand" },
               ].map((s, i) => (
                 <div key={i} className="stat-card bg-white border border-[#d1d1d1] p-8 text-center">
                   <p className="font-heading text-4xl font-light text-[#2c2c2c] mb-2">{s.val}</p>
@@ -271,8 +271,8 @@ export default function AboutProcess() {
             </div>
             <div className="reveal d2 space-y-5">
               {[
-                { icon: "✦", title: "Art that stays with you",      desc: "Not décor that sits in a corner — pieces that command the room." },
-                { icon: "✦", title: "Every pour is unrepeatable",   desc: "No two pieces are identical. Yours is truly one of one." },
+                { icon: "✦", title: "Art that stays with you", desc: "Not décor that sits in a corner — pieces that command the room." },
+                { icon: "✦", title: "Every pour is unrepeatable", desc: "No two pieces are identical. Yours is truly one of one." },
                 { icon: "✦", title: "Trusted for occasions that matter", desc: "Weddings, corporate gifting, bespoke commissions — when it has to be perfect." },
               ].map((item, i) => (
                 <div key={i} className="flex gap-5 items-start">
@@ -292,7 +292,7 @@ export default function AboutProcess() {
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-[#8e9882] text-xs tracking-[0.3em] uppercase mb-6">Our Vision</p>
             <p className="font-heading text-2xl md:text-4xl text-[#f5f3ee] font-light italic leading-relaxed">
-              "To create art that doesn't just sit in your home — but stays with you."
+              "To create art that doesn't just sit in your home — but becomes a show stopper."
             </p>
             <p className="mt-8 text-[#8e9882] text-sm tracking-widest">— Pragya, Founder, ETCH</p>
           </div>
@@ -323,9 +323,8 @@ export default function AboutProcess() {
             {steps.map((step, i) => (
               <div
                 key={step.num}
-                className={`reveal flex flex-col gap-8 md:gap-16 items-center ${
-                  i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
+                className={`reveal flex flex-col gap-8 md:gap-16 items-center ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                  }`}
               >
                 <div className="md:w-1/2">
                   <div className="process-img-wrap">

@@ -15,7 +15,7 @@ import item2 from "@/assets/item2.jpeg";
 import item3 from "@/assets/item3.jpeg";
 import item4 from "@/assets/item4.jpeg";
 
-type Category = "All" | "Trays" | "Boards" | "Tables" | "Gifting";
+type Category = "All" | "Trays" | "Paddles & Boards" | "Coasters" | "Napkin Rings" | "Vases" | "Wall Art" | "Gifting" ;
 
 const products = [
   { name: "Midnight Silver Tray", price: "₹4,500", image: productBlackSilver, cat: "Trays" as Category },
@@ -32,7 +32,7 @@ const products = [
   { name: "Emerald Flow Tray", price: "₹6,500", image: item4, cat: "Trays" as Category },
 ];
 
-const categories: Category[] = ["All", "Trays", "Boards", "Tables", "Gifting"];
+const categories: Category[] = ["All" , "Trays" , "Paddles & Boards" , "Coasters" , "Napkin Rings" , "Vases" , "Wall Art" , "Gifting"];
 
 export default function Collection() {
   const [active, setActive] = useState<Category>("All");
@@ -73,22 +73,17 @@ export default function Collection() {
           {/* 🔥 3 COLUMN GRID */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {filtered.map((p) => (
-              <div key={p.name} className="group">
+              <Link
+                key={p.name}
+                to={`/product/${p.name.replace(/\s+/g, "-").toLowerCase()}`}
+                className="group block transition-opacity duration-300 hover:opacity-90"
+              >
                 <div className="relative overflow-hidden aspect-square bg-secondary">
                   <img
                     src={p.image}
                     alt={p.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-
-                  <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/40 flex items-center justify-center transition">
-                    <Link
-                      to={`/product/${p.name.replace(/\s+/g, "-").toLowerCase()}`}
-                      className="opacity-0 group-hover:opacity-100 px-6 py-2 border border-cream text-cream text-xs uppercase tracking-[0.2em]"
-                    >
-                      Enquire Now
-                    </Link>
-                  </div>
                 </div>
 
                 <div className="mt-4">
@@ -97,7 +92,7 @@ export default function Collection() {
                     Starting {p.price}
                   </p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>

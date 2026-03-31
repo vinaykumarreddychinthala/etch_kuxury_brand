@@ -554,7 +554,7 @@ export default function Product() {
                 setTimeout(() => navigate("/contact"), 220);
               }}
             >
-              Buy it now
+              Add Engraving
             </button>
 
             <button
