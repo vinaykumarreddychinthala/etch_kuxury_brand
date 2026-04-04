@@ -253,11 +253,15 @@ const getProductDetails = (id: string | undefined) => {
   };
 };
 
+import { useCart } from "@/contexts/CartContext";
+
 export default function Product() {
   const { id } = useParams();
   const navigate = useNavigate();
   const product = getProductDetails(id);
   const colourOptions = product.colourOptions ?? defaultColourOptions;
+
+  const { addToCart } = useCart();
 
   const [selectedImage, setSelectedImage]   = useState(0);
   const [quantity, setQuantity]             = useState(1);
@@ -528,9 +532,9 @@ export default function Product() {
               In stock, ready to ship
             </div>
 
-            {/* Quantity */}
-            <div className="flex gap-4 mb-4">
-              <div className="flex items-center border border-[#d1d1d1]">
+            {/* Quantity and Add to Cart */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-4">
+              <div className="flex items-center border border-[#d1d1d1] shrink-0">
                 <button
                   onClick={() => quantity > 1 && setQuantity(q => q - 1)}
                   className="px-4 py-4 hover:bg-black/5 transition-colors"
@@ -545,6 +549,25 @@ export default function Product() {
                   <Plus className="w-4 h-4 text-[#2c2c2c]" />
                 </button>
               </div>
+
+              <button
+                className="btn-buy flex-1 py-4 bg-[#2c2c2c] hover:bg-[#1a1a1a] text-white text-sm font-medium transition-colors tracking-wide"
+                onClick={(e) => {
+                  addRipple(e);
+                  addToCart({
+                    id: `${product.id}-${selectedColour?.name || 'default'}`,
+                    productId: product.id,
+                    title: product.title,
+                    price: product.price,
+                    image: displayImage,
+                    colorName: selectedColour?.name || null,
+                    colorHex: selectedColour?.hex || null,
+                    quantity: quantity
+                  });
+                }}
+              >
+                Add To Cart
+              </button>
             </div>
 
             <button
