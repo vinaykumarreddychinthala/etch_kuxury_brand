@@ -20,14 +20,14 @@ const craftFeatures = [
   },
   {
     icon: "💎",
-    title: "Sustainable",
-    desc: "Food Grade & Ecofriendly Materials Used",
+    title: "Eco-friendly",
+    desc: "Food Grade & Eco-friendly Materials Used",
   },
   {
     icon: "🪵",
     title: "Artisian Crafted",
     // desc: "Each slab is hand-selected for its natural character, grain, and raw beauty.",
-    desc: "Hand Made With Care"
+    desc: "Handmade with care and precision"
   },
 ];
 
@@ -64,9 +64,9 @@ export default function Index() {
               <br />
               Poured in Resin.
             </h1>
-            <p className="mt-6 text-cream/80 text-sm md:text-base tracking-widest uppercase font-body animate-fade-up [animation-delay:200ms]">
+            {/* <p className="mt-6 text-cream/80 text-sm md:text-base tracking-widest uppercase font-body animate-fade-up [animation-delay:200ms]">
               Luxury handcrafted pieces, made to order.
-            </p>
+            </p> */}
             <Link
               to="/collection"
               className="inline-block mt-10 px-8 py-3 border border-cream/60 text-cream text-sm tracking-[0.2em] uppercase hover:bg-cream hover:text-foreground transition-all duration-500 animate-fade-up [animation-delay:400ms]"

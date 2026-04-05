@@ -169,7 +169,7 @@ export default function AboutProcess() {
             {" "}them.
           </h1>
           <p className="reveal d3 text-muted-foreground max-w-lg mx-auto leading-relaxed text-sm">
-            Handcrafted resin art rooted in passion — born in the pandemic, refined over 3,000 pieces.
+            Handcrafted resin art rooted in passion — born in the pandemic, Refined over time.
           </p>
         </section>
 
@@ -207,9 +207,7 @@ export default function AboutProcess() {
             <div className="space-y-8">
               <div className="reveal d1">
                 <p className="text-[#2c2c2c] leading-relaxed text-base">
-                  Art has always been more than just an interest — it's been a constant part of who I am.
-                  Over the years I explored various forms of creative expression, from canvas art to curated
-                  exhibitions in Delhi and Agra.
+                  Art has always been more than a passion — it's been a quiet constant in my life. Over the years, I've explored many forms of creative expression, from canvas to mixed media, each one leaving its mark on how I create today.
                 </p>
               </div>
               <div className="reveal d2 quote-bar pl-5 py-1">
