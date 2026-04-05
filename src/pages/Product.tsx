@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { Minus, Plus, Star } from "lucide-react";
+import { Minus, Plus } from "lucide-react";
 import Layout from "@/components/Layout";
 import {
   Accordion,
@@ -35,12 +35,12 @@ import seascape from "@/assets/seascape.png";
 // The global `defaultColourOptions` is a fallback for products with no custom colours.
 // ─────────────────────────────────────────────────────────────────────────────
 const defaultColourOptions = [
-  { name: "Teal",        hex: "#4ab3b0", image: item1 },
-  { name: "Navy",        hex: "#3b3f8c", image: item2 },
-  { name: "Olive",       hex: "#7a8c3b", image: item3 },
+  { name: "Teal", hex: "#4ab3b0", image: item1 },
+  { name: "Navy", hex: "#3b3f8c", image: item2 },
+  { name: "Olive", hex: "#7a8c3b", image: item3 },
   { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
-  { name: "Lilac",       hex: "#7b5ea7", image: productOceanBlue },
-  { name: "Terracotta",  hex: "#c07850", image: productMonochrome },
+  { name: "Lilac", hex: "#7b5ea7", image: productOceanBlue },
+  { name: "Terracotta", hex: "#c07850", image: productMonochrome },
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -56,12 +56,12 @@ const productsDatabase: Record<string, any> = {
     price: "₹4,500",
     images: [productBlackSilver, productMonochrome, productOceanBlue],
     colourOptions: [
-    { name: "Teal",        hex: "#4ab3b0", image: item1 },
-  { name: "Navy",        hex: "#3b3f8c", image: item2 },
-  { name: "Olive",       hex: "#7a8c3b", image: item3 },
-  { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
-  { name: "Lilac",       hex: "#7b5ea7", image: lilac },
-  { name: "Terracotta",  hex: "#c07850", image: productMonochrome },
+      { name: "Teal", hex: "#4ab3b0", image: item1 },
+      { name: "Navy", hex: "#3b3f8c", image: item2 },
+      { name: "Olive", hex: "#7a8c3b", image: item3 },
+      { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
+      { name: "Lilac", hex: "#7b5ea7", image: lilac },
+      { name: "Terracotta", hex: "#c07850", image: productMonochrome },
     ],
   },
   "ocean-blue-tray": {
@@ -69,12 +69,12 @@ const productsDatabase: Record<string, any> = {
     price: "₹5,200",
     images: [productOceanBlue, productMonochrome, productBlackSilver],
     colourOptions: [
-     { name: "Teal",        hex: "#4ab3b0", image: item1 },
-  { name: "Navy",        hex: "#3b3f8c", image: item2 },
-  { name: "Olive",       hex: "#7a8c3b", image: item3 },
-  { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
-  { name: "Lilac",       hex: "#7b5ea7", image: lilac },
-  { name: "Terracotta",  hex: "#c07850", image: productMonochrome },
+      { name: "Teal", hex: "#4ab3b0", image: item1 },
+      { name: "Navy", hex: "#3b3f8c", image: item2 },
+      { name: "Olive", hex: "#7a8c3b", image: item3 },
+      { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
+      { name: "Lilac", hex: "#7b5ea7", image: lilac },
+      { name: "Terracotta", hex: "#c07850", image: productMonochrome },
     ],
   },
   "monochrome-cheese-board": {
@@ -82,12 +82,12 @@ const productsDatabase: Record<string, any> = {
     price: "₹3,800",
     images: [productMonochrome, productBlackSilver, productOceanBlue],
     colourOptions: [
- { name: "Teal",        hex: "#4ab3b0", image: item1 },
-  { name: "Navy",        hex: "#3b3f8c", image: item2 },
-  { name: "Olive",       hex: "#7a8c3b", image: item3 },
-  { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
-  { name: "Lilac",       hex: "#7b5ea7", image: lilac },
-  { name: "Terracotta",  hex: "#c07850", image: productMonochrome },
+      { name: "Teal", hex: "#4ab3b0", image: item1 },
+      { name: "Navy", hex: "#3b3f8c", image: item2 },
+      { name: "Olive", hex: "#7a8c3b", image: item3 },
+      { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
+      { name: "Lilac", hex: "#7b5ea7", image: lilac },
+      { name: "Terracotta", hex: "#c07850", image: productMonochrome },
     ],
   },
   "resin-river-table": {
@@ -95,12 +95,12 @@ const productsDatabase: Record<string, any> = {
     price: "₹28,000",
     images: [productRiverTable, productMonochrome, productBlackSilver],
     colourOptions: [
-   { name: "Teal",        hex: "#4ab3b0", image: item1 },
-  { name: "Navy",        hex: "#3b3f8c", image: item2 },
-  { name: "Olive",       hex: "#7a8c3b", image: item3 },
-  { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
-  { name: "Lilac",       hex: "#7b5ea7", image: lilac },
-  { name: "Terracotta",  hex: "#c07850", image: productMonochrome },
+      { name: "Teal", hex: "#4ab3b0", image: item1 },
+      { name: "Navy", hex: "#3b3f8c", image: item2 },
+      { name: "Olive", hex: "#7a8c3b", image: item3 },
+      { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
+      { name: "Lilac", hex: "#7b5ea7", image: lilac },
+      { name: "Terracotta", hex: "#c07850", image: productMonochrome },
     ],
   },
   "coaster-set": {
@@ -108,12 +108,12 @@ const productsDatabase: Record<string, any> = {
     price: "₹1,800",
     images: [productCoasters, productMonochrome, productBlackSilver],
     colourOptions: [
- { name: "Teal",        hex: "#4ab3b0", image: item1 },
-  { name: "Navy",        hex: "#3b3f8c", image: item2 },
-  { name: "Olive",       hex: "#7a8c3b", image: item3 },
-  { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
-  { name: "Lilac",       hex: "#7b5ea7", image: lilac },
-  { name: "Terracotta",  hex: "#c07850", image: productMonochrome },
+      { name: "Teal", hex: "#4ab3b0", image: item1 },
+      { name: "Navy", hex: "#3b3f8c", image: item2 },
+      { name: "Olive", hex: "#7a8c3b", image: item3 },
+      { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
+      { name: "Lilac", hex: "#7b5ea7", image: lilac },
+      { name: "Terracotta", hex: "#c07850", image: productMonochrome },
     ],
   },
   "custom-name-plaque": {
@@ -121,12 +121,12 @@ const productsDatabase: Record<string, any> = {
     price: "₹2,500",
     images: [productNamePlaque, productMonochrome, productBlackSilver],
     colourOptions: [
- { name: "Teal",        hex: "#4ab3b0", image: item1 },
-  { name: "Navy",        hex: "#3b3f8c", image: item2 },
-  { name: "Olive",       hex: "#7a8c3b", image: item3 },
-  { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
-  { name: "Lilac",       hex: "#7b5ea7", image: lilac },
-  { name: "Terracotta",  hex: "#c07850", image: productMonochrome },
+      { name: "Teal", hex: "#4ab3b0", image: item1 },
+      { name: "Navy", hex: "#3b3f8c", image: item2 },
+      { name: "Olive", hex: "#7a8c3b", image: item3 },
+      { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
+      { name: "Lilac", hex: "#7b5ea7", image: lilac },
+      { name: "Terracotta", hex: "#c07850", image: productMonochrome },
     ],
   },
 
@@ -136,12 +136,12 @@ const productsDatabase: Record<string, any> = {
     price: "₹4,500",
     images: [productBlackSilver, productMonochrome, productOceanBlue],
     colourOptions: [
- { name: "Teal",        hex: "#4ab3b0", image: item1 },
-  { name: "Navy",        hex: "#3b3f8c", image: item2 },
-  { name: "Olive",       hex: "#7a8c3b", image: item3 },
-  { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
-  { name: "Lilac",       hex: "#7b5ea7", image: lilac },
-  { name: "Terracotta",  hex: "#c07850", image: productMonochrome },
+      { name: "Teal", hex: "#4ab3b0", image: item1 },
+      { name: "Navy", hex: "#3b3f8c", image: item2 },
+      { name: "Olive", hex: "#7a8c3b", image: item3 },
+      { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
+      { name: "Lilac", hex: "#7b5ea7", image: lilac },
+      { name: "Terracotta", hex: "#c07850", image: productMonochrome },
     ],
   },
   "ocean-drift-tray": {
@@ -149,12 +149,12 @@ const productsDatabase: Record<string, any> = {
     price: "₹5,200",
     images: [productOceanBlue, productMonochrome, productBlackSilver],
     colourOptions: [
- { name: "Teal",        hex: "#4ab3b0", image: item1 },
-  { name: "Navy",        hex: "#3b3f8c", image: item2 },
-  { name: "Olive",       hex: "#7a8c3b", image: item3 },
-  { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
-  { name: "Lilac",       hex: "#7b5ea7", image: lilac },
-  { name: "Terracotta",  hex: "#c07850", image: productMonochrome },
+      { name: "Teal", hex: "#4ab3b0", image: item1 },
+      { name: "Navy", hex: "#3b3f8c", image: item2 },
+      { name: "Olive", hex: "#7a8c3b", image: item3 },
+      { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
+      { name: "Lilac", hex: "#7b5ea7", image: lilac },
+      { name: "Terracotta", hex: "#c07850", image: productMonochrome },
     ],
   },
   "monochrome-board": {
@@ -162,12 +162,12 @@ const productsDatabase: Record<string, any> = {
     price: "₹3,800",
     images: [productMonochrome, productBlackSilver, productOceanBlue],
     colourOptions: [
-   { name: "Teal",        hex: "#4ab3b0", image: item1 },
-  { name: "Navy",        hex: "#3b3f8c", image: item2 },
-  { name: "Olive",       hex: "#7a8c3b", image: item3 },
-  { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
-  { name: "Lilac",       hex: "#7b5ea7", image: lilac },
-  { name: "Terracotta",  hex: "#c07850", image: productMonochrome },
+      { name: "Teal", hex: "#4ab3b0", image: item1 },
+      { name: "Navy", hex: "#3b3f8c", image: item2 },
+      { name: "Olive", hex: "#7a8c3b", image: item3 },
+      { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
+      { name: "Lilac", hex: "#7b5ea7", image: lilac },
+      { name: "Terracotta", hex: "#c07850", image: productMonochrome },
     ],
   },
   "noir-coaster-set": {
@@ -175,12 +175,12 @@ const productsDatabase: Record<string, any> = {
     price: "₹1,800",
     images: [productCoasters, productMonochrome, productBlackSilver],
     colourOptions: [
- { name: "Teal",        hex: "#4ab3b0", image: item1 },
-  { name: "Navy",        hex: "#3b3f8c", image: item2 },
-  { name: "Olive",       hex: "#7a8c3b", image: item3 },
-  { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
-  { name: "Lilac",       hex: "#7b5ea7", image: lilac },
-  { name: "Terracotta",  hex: "#c07850", image: productMonochrome },
+      { name: "Teal", hex: "#4ab3b0", image: item1 },
+      { name: "Navy", hex: "#3b3f8c", image: item2 },
+      { name: "Olive", hex: "#7a8c3b", image: item3 },
+      { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
+      { name: "Lilac", hex: "#7b5ea7", image: lilac },
+      { name: "Terracotta", hex: "#c07850", image: productMonochrome },
     ],
   },
 
@@ -190,12 +190,12 @@ const productsDatabase: Record<string, any> = {
     price: "₹5,800",
     images: [item1, item2, item3, item4],
     colourOptions: [
- { name: "Teal",        hex: "#4ab3b0", image: item1 },
-  { name: "Navy",        hex: "#3b3f8c", image: navy },
-  { name: "Slate",       hex: "#374754", image: slate },
-  { name: "Powder Blue", hex: "#23b1d1", image: seascape },
-  { name: "Lilac",       hex: "#7b5ea7", image: lilac },
-  { name: "Terracotta",  hex: "#c07850", image: orange },
+      { name: "Teal", hex: "#4ab3b0", image: item1 },
+      { name: "Navy", hex: "#3b3f8c", image: navy },
+      { name: "Slate", hex: "#374754", image: slate },
+      { name: "Powder Blue", hex: "#23b1d1", image: seascape },
+      { name: "Lilac", hex: "#7b5ea7", image: lilac },
+      { name: "Terracotta", hex: "#c07850", image: orange },
     ],
   },
   "walnut-glow-board": {
@@ -203,12 +203,12 @@ const productsDatabase: Record<string, any> = {
     price: "₹4,200",
     images: [item2, item1, item3],
     colourOptions: [
- { name: "Teal",        hex: "#4ab3b0", image: item1 },
-  { name: "Navy",        hex: "#3b3f8c", image: item2 },
-  { name: "Olive",       hex: "#7a8c3b", image: item3 },
-  { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
-  { name: "Lilac",       hex: "#7b5ea7", image: lilac },
-  { name: "Terracotta",  hex: "#c07850", image: productMonochrome },
+      { name: "Teal", hex: "#4ab3b0", image: item1 },
+      { name: "Navy", hex: "#3b3f8c", image: item2 },
+      { name: "Olive", hex: "#7a8c3b", image: item3 },
+      { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
+      { name: "Lilac", hex: "#7b5ea7", image: lilac },
+      { name: "Terracotta", hex: "#c07850", image: productMonochrome },
     ],
   },
   "black-marble-resin-tray": {
@@ -216,12 +216,12 @@ const productsDatabase: Record<string, any> = {
     price: "₹6,200",
     images: [item3, item1, item2],
     colourOptions: [
- { name: "Teal",        hex: "#4ab3b0", image: item1 },
-  { name: "Navy",        hex: "#3b3f8c", image: item2 },
-  { name: "Olive",       hex: "#7a8c3b", image: item3 },
-  { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
-  { name: "Lilac",       hex: "#7b5ea7", image: lilac },
-  { name: "Terracotta",  hex: "#c07850", image: productMonochrome },
+      { name: "Teal", hex: "#4ab3b0", image: item1 },
+      { name: "Navy", hex: "#3b3f8c", image: item2 },
+      { name: "Olive", hex: "#7a8c3b", image: item3 },
+      { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
+      { name: "Lilac", hex: "#7b5ea7", image: lilac },
+      { name: "Terracotta", hex: "#c07850", image: productMonochrome },
     ],
   },
   "emerald-flow-tray": {
@@ -229,25 +229,23 @@ const productsDatabase: Record<string, any> = {
     price: "₹6,500",
     images: [item4, item1, item2],
     colourOptions: [
- { name: "Teal",        hex: "#4ab3b0", image: item1 },
-  { name: "Navy",        hex: "#3b3f8c", image: item2 },
-  { name: "Olive",       hex: "#7a8c3b", image: item3 },
-  { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
-  { name: "Lilac",       hex: "#7b5ea7", image: lilac },
-  { name: "Terracotta",  hex: "#c07850", image: productMonochrome },
+      { name: "Teal", hex: "#4ab3b0", image: item1 },
+      { name: "Navy", hex: "#3b3f8c", image: item2 },
+      { name: "Olive", hex: "#7a8c3b", image: item3 },
+      { name: "Powder Blue", hex: "#a8c8d8", image: item4 },
+      { name: "Lilac", hex: "#7b5ea7", image: lilac },
+      { name: "Terracotta", hex: "#c07850", image: productMonochrome },
     ],
   },
 };
 
 const getProductDetails = (id: string | undefined) => {
   const found = id ? productsDatabase[id] : null;
-  if (found) return { ...found, id, rating: 4.9, reviews: 101 };
+  if (found) return { ...found, id };
   return {
     id: "not-found",
     title: "Resin Masterpiece",
     price: "₹3,500",
-    rating: 4.9,
-    reviews: 84,
     images: [productOceanBlue, productMonochrome, productBlackSilver],
     colourOptions: defaultColourOptions,
   };
@@ -263,14 +261,14 @@ export default function Product() {
 
   const { addToCart } = useCart();
 
-  const [selectedImage, setSelectedImage]   = useState(0);
-  const [quantity, setQuantity]             = useState(1);
-  const [isChatOpen, setIsChatOpen]         = useState(false);
+  const [selectedImage, setSelectedImage] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+  const [isChatOpen, setIsChatOpen] = useState(false);
   const [selectedColour, setSelectedColour] = useState<typeof colourOptions[0] | null>(null);
 
   // Touch-swipe state
   const touchStartX = useRef<number | null>(null);
-  const touchEndX   = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
 
   const totalImages = selectedColour ? 1 : product.images.length;
 
@@ -296,7 +294,7 @@ export default function Product() {
       delta > 0 ? goNext() : goPrev();
     }
     touchStartX.current = null;
-    touchEndX.current   = null;
+    touchEndX.current = null;
   };
 
   // Clicking same colour deselects it
@@ -312,7 +310,7 @@ export default function Product() {
     circle.className = "ripple-circle";
     const rect = btn.getBoundingClientRect();
     circle.style.left = `${e.clientX - rect.left - 30}px`;
-    circle.style.top  = `${e.clientY - rect.top  - 30}px`;
+    circle.style.top = `${e.clientY - rect.top - 30}px`;
     btn.appendChild(circle);
     setTimeout(() => circle.remove(), 600);
   };
@@ -405,14 +403,14 @@ export default function Product() {
                     onClick={goPrev}
                     aria-label="Previous"
                   >
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6" /></svg>
                   </button>
                   <button
                     className="hidden md:flex absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/85 hover:bg-white rounded-full items-center justify-center shadow transition-all hover:scale-105"
                     onClick={goNext}
                     aria-label="Next"
                   >
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
                   </button>
                 </>
               )}
@@ -452,11 +450,10 @@ export default function Product() {
                   <button
                     key={idx}
                     onClick={() => setSelectedImage(idx)}
-                    className={`relative shrink-0 w-20 h-20 lg:w-24 lg:h-24 overflow-hidden border-2 transition-all duration-200 ${
-                      selectedImage === idx
+                    className={`relative shrink-0 w-20 h-20 lg:w-24 lg:h-24 overflow-hidden border-2 transition-all duration-200 ${selectedImage === idx
                         ? "border-[#2c2c2c] scale-105 shadow-md"
                         : "border-transparent hover:border-[#2c2c2c]/30 hover:scale-105"
-                    }`}
+                      }`}
                   >
                     <img src={img} alt={`View ${idx + 1}`} className="w-full h-full object-cover" />
                   </button>
@@ -471,9 +468,8 @@ export default function Product() {
                   <button
                     key={idx}
                     onClick={() => setSelectedImage(idx)}
-                    className={`shrink-0 w-14 h-14 overflow-hidden border-2 transition-all ${
-                      selectedImage === idx ? "border-[#2c2c2c]" : "border-transparent opacity-60"
-                    }`}
+                    className={`shrink-0 w-14 h-14 overflow-hidden border-2 transition-all ${selectedImage === idx ? "border-[#2c2c2c]" : "border-transparent opacity-60"
+                      }`}
                   >
                     <img src={img} alt={`View ${idx + 1}`} className="w-full h-full object-cover" />
                   </button>
@@ -486,15 +482,7 @@ export default function Product() {
           <div className="flex-1 max-w-full lg:max-w-md w-full">
             <h1 className="font-heading text-3xl sm:text-4xl mb-3 text-[#2c2c2c] leading-tight">{product.title}</h1>
 
-            <div className="flex items-center gap-2 mb-5">
-              <div className="flex text-[#8e9882]">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3 h-3 fill-current" />
-                ))}
-              </div>
-              <span className="text-xs text-muted-foreground">{product.rating}</span>
-              <span className="text-xs text-muted-foreground">| {product.reviews} reviews</span>
-            </div>
+
 
             <p className="text-xl mb-7 text-[#2c2c2c] font-medium">{product.price}</p>
 
@@ -514,18 +502,15 @@ export default function Product() {
                     title={colour.name}
                     aria-label={colour.name}
                     aria-pressed={selectedColour?.name === colour.name}
-                    className={`colour-swatch w-10 h-10 rounded-sm ${
-                      selectedColour?.name === colour.name ? "active" : ""
-                    }`}
+                    className={`colour-swatch w-10 h-10 rounded-sm ${selectedColour?.name === colour.name ? "active" : ""
+                      }`}
                     style={{ backgroundColor: colour.hex }}
                   />
                 ))}
               </div>
             </div>
 
-            <button className="w-full py-4 bg-[#4a4a4a] hover:bg-[#3a3a3a] text-white text-sm font-medium transition-colors mb-5 tracking-wide">
-              Add Engraving & Gift Note Here
-            </button>
+
 
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#a3ab6c] text-white text-sm rounded-full mb-7 font-medium">
               <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
@@ -570,21 +555,13 @@ export default function Product() {
               </button>
             </div>
 
-            <button
-              className="btn-buy w-full py-4 border border-[#d1d1d1] bg-[#f2f0ea] hover:bg-[#e8e6e0] text-[#2c2c2c] font-medium transition-colors mb-4 tracking-wide"
-              onClick={(e) => {
-                addRipple(e);
-                setTimeout(() => navigate("/contact"), 220);
-              }}
-            >
-              Add Engraving
-            </button>
+
 
             <button
               className="btn-bulk w-full py-4 bg-[#2c2c2c] hover:bg-[#1a1a1a] text-white font-medium mb-10 tracking-wide text-sm"
               onClick={() => navigate("/contact")}
             >
-              🧾 Buy in Bulk / Corporate Order
+              🧾 Buy in Bulk / Corporate Order (Min. 30)
             </button>
 
             <div className="border-t border-[#d1d1d1]">
@@ -608,7 +585,7 @@ export default function Product() {
                   {
                     value: "returns",
                     label: "Returns & Exchanges",
-                    content: "We accept returns within 14 days of delivery. Items must be in original condition. Custom engraved items are non-refundable.",
+                    content: "We accept returns within 14 days of delivery. Items must be in original condition.",
                   },
                 ].map(item => (
                   <AccordionItem key={item.value} value={item.value} className="border-b border-[#d1d1d1]">

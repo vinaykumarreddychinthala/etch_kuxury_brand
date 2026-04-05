@@ -6,18 +6,20 @@ import processMold from "@/assets/process-mold.jpg";
 import processPour from "@/assets/process-pour.jpg";
 import processSand from "@/assets/process-sand.jpg";
 import processFinish from "@/assets/process-finish.jpg";
+import img1 from "@/assets/img1.jpeg";
+import item2 from "@/assets/item2.jpeg";
 
 const steps = [
   {
     num: "01",
     title: "Sourcing the Wood",
     desc: "Handpicked solid walnut or acacia slabs, chosen for their natural grain, character, and live-edge beauty.",
-    image: processSourcing,
+    image: img1,
   },
   {
     num: "02",
-    title: "Mold & Design",
-    desc: "Custom sizing, colour planning, and layout — every piece is mapped before the first pour.",
+    title: "Colour palette & designing",
+    desc: "Colour planning , layout and pattern development - every piece is mapped before the first pour",
     image: processMold,
   },
   {
@@ -35,8 +37,14 @@ const steps = [
   {
     num: "05",
     title: "Seal & Finish",
-    desc: "Food-safe topcoat, handle fitting, and final quality inspection. Ready to be cherished.",
+    desc: "Mineral oil polish, top coat and final quality inspection.",
     image: processFinish,
+  },
+  {
+    num: "06",
+    title: "Packing Orders",
+    desc: "Your favourite products are now ready to be packed and sent to their new homes.",
+    image: item2,
   },
 ];
 
@@ -218,14 +226,14 @@ export default function AboutProcess() {
               <div className="reveal d3">
                 <p className="text-muted-foreground leading-relaxed text-sm">
                   What started as an exploration soon turned into a passion-driven venture. In the past three
-                  years I have handcrafted over 3,000 trays and platters — each piece unique in its design
+                  years I have handcrafted several trays and platters — each piece unique in its design
                   and character. My work has been trusted for bulk orders across weddings, corporate gifting,
                   and special occasions; spaces where every detail matters.
                 </p>
               </div>
               <div className="reveal d4">
                 <p className="text-muted-foreground leading-relaxed text-sm">
-                  Now, I'm proud to introduce my premium brand —{" "}
+                  Now, I'm proud to introduce {" "}
                   <strong className="text-[#2c2c2c] font-medium">ETCH</strong>.{" "}
                   Etch means to carve something permanently — into a surface, into memory. Every piece
                   we create is designed to leave a lasting impression. These are not just products;
@@ -264,7 +272,7 @@ export default function AboutProcess() {
               </h2>
               <p className="text-muted-foreground leading-relaxed text-sm">
                 To carve something permanently — into a surface, into memory. With ETCH, the vision
-                is simple: to create art that doesn't just sit in your home — but stays with you.
+                is simple: to create art that doesn't just sit in your home — but adds more to it.
               </p>
             </div>
             <div className="reveal d2 space-y-5">
@@ -354,20 +362,38 @@ export default function AboutProcess() {
           </p>
         </section>
 
-        {/* Final CTA */}
+        {/* Customer Service Card */}
         <section className="reveal py-24 md:py-32 text-center px-6">
-          <h2 className="font-heading text-3xl md:text-4xl font-light tracking-wide mb-4 text-[#2c2c2c]">
-            Want something custom?
-          </h2>
-          <p className="text-muted-foreground mb-10 max-w-md mx-auto text-sm">
-            Tell us your vision — size, colours, and purpose — and we'll craft it just for you.
-          </p>
-          <Link
-            to="/contact"
-            className="cta-slide px-10 py-3 border border-[#2c2c2c] text-sm tracking-[0.2em] uppercase"
-          >
-            <span className="text-[#2c2c2c]">Commission a Piece</span>
-          </Link>
+          <div className="max-w-3xl mx-auto flex flex-col items-center">
+            {/* Headphone icon */}
+            <svg className="mb-6 text-[#2c2c2c]" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+              <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+            </svg>
+            
+            <h2 className="font-heading text-3xl md:text-4xl font-light tracking-wide mb-6 text-[#2c2c2c]">
+              Customer Service
+            </h2>
+            
+            <p className="text-muted-foreground mb-12 leading-relaxed text-sm md:text-base max-w-4xl mx-auto">
+              For instant help, use our Live Chat. You can also email us at{" "}
+              <a href="mailto:etchstudio.in@gmail.com" className="underline hover:text-[#2c2c2c] transition-colors">
+                etchstudio.in@gmail.com
+              </a>
+              , or call or text us at{" "}
+              <a href="tel:+919330132374" className="underline hover:text-[#2c2c2c] transition-colors">
+                +91 93301 32374
+              </a>
+            </p>
+
+            {/* Pagination Style Dots */}
+            <div className="flex gap-4 justify-center items-center">
+              <div className="w-2.5 h-2.5 rounded-full border border-[#2c2c2c]"></div>
+              <div className="w-1.5 h-1.5 rounded-full bg-[#2c2c2c]"></div>
+              <div className="w-1.5 h-1.5 rounded-full bg-[#2c2c2c]"></div>
+              <div className="w-1.5 h-1.5 rounded-full bg-[#2c2c2c]"></div>
+            </div>
+          </div>
         </section>
 
       </div>

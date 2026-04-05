@@ -87,7 +87,7 @@ export default function ProductCare() {
             </div>
           </section>
 
-          <section>
+          {/* <section>
             <h2 className="text-2xl font-heading mb-4 border-b border-border/50 pb-2 uppercase tracking-widest">
               Resin and Wood Cheese Knives
             </h2>
@@ -99,7 +99,7 @@ export default function ProductCare() {
                 </ul>
               </div>
             </div>
-          </section>
+          </section> */}
 
           <section>
             <h2 className="text-2xl font-heading mb-4 border-b border-border/50 pb-2 uppercase tracking-widest">
@@ -130,7 +130,7 @@ export default function ProductCare() {
               </div>
             </div>
           </section>
-
+{/* 
           <section>
             <h2 className="text-2xl font-heading mb-4 border-b border-border/50 pb-2 uppercase tracking-widest">
               Resin and Wood Bowls
@@ -160,10 +160,10 @@ export default function ProductCare() {
                 </ul>
               </div>
             </div>
-          </section>
+          </section> */}
 
           <p className="text-center italic text-muted-foreground mt-16 pt-8 border-t border-border/40">
-            If you have any questions about caring for your resin and wood products or need further assistance, please don't hesitate to <a href="/contact" className="underline hover:text-primary transition-colors">contact our customer service</a>. We're here to help!
+            If you have any questions about caring for your resin and wood products or need further assistance, please don't hesitate to <a href="tel:+919330132374" className="underline hover:text-primary transition-colors">contact our customer care</a>. We're here to help!
           </p>
         </div>
       </div>

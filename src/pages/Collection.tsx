@@ -15,15 +15,15 @@ import item2 from "@/assets/item2.jpeg";
 import item3 from "@/assets/item3.jpeg";
 import item4 from "@/assets/item4.jpeg";
 
-type Category = "All" | "Trays" | "Paddles & Boards" | "Coasters" | "Napkin Rings" | "Vases" | "Wall Art" | "Gifting" ;
+type Category = "All" | "Trays" | "Paddles & Boards" | "Coasters" | "Napkin Rings" | "Vases" | "Wall Art" | "Gift Bundles";
 
 const products = [
   { name: "Midnight Silver Tray", price: "₹4,500", image: productBlackSilver, cat: "Trays" as Category },
   { name: "Ocean Drift Tray", price: "₹5,200", image: productOceanBlue, cat: "Trays" as Category },
   { name: "Monochrome Board", price: "₹3,800", image: productMonochrome, cat: "Boards" as Category },
   { name: "Resin River Table", price: "₹28,000", image: productRiverTable, cat: "Tables" as Category },
-  { name: "Noir Coaster Set", price: "₹1,800", image: productCoasters, cat: "Gifting" as Category },
-  { name: "Custom Name Plaque", price: "₹2,500", image: productNamePlaque, cat: "Gifting" as Category },
+  { name: "Noir Coaster Set", price: "₹1,800", image: productCoasters, cat: "Gift Bundles" as Category },
+  { name: "Custom Name Plaque", price: "₹2,500", image: productNamePlaque, cat: "Gift Bundles" as Category },
 
   // 🔥 Added items (same as index)
   { name: "Golden River Tray", price: "₹5,800", image: item1, cat: "Trays" as Category },
@@ -32,7 +32,7 @@ const products = [
   { name: "Emerald Flow Tray", price: "₹6,500", image: item4, cat: "Trays" as Category },
 ];
 
-const categories: Category[] = ["All" , "Trays" , "Paddles & Boards" , "Coasters" , "Napkin Rings" , "Vases" , "Wall Art" , "Gifting"];
+const categories: Category[] = ["All" , "Trays" , "Paddles & Boards" , "Coasters" , "Napkin Rings" , "Vases" , "Wall Art" , "Gift Bundles"];
 
 export default function Collection() {
   const [active, setActive] = useState<Category>("All");

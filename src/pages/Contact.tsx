@@ -10,6 +10,7 @@ export default function Contact() {
     name: "",
     email: "",
     phone: "",
+    engraving: "",
     message: "",
   });
 
@@ -30,6 +31,7 @@ export default function Contact() {
 Name: ${formData.name}
 Email: ${formData.email}
 Phone: ${formData.phone}
+Engraving Text: ${formData.engraving || "None"}
 
 Message: ${formData.message}`;
 
@@ -46,7 +48,8 @@ Message: ${formData.message}`;
             Commission Your Piece
           </h1>
           <p className="text-center text-muted-foreground mb-16 max-w-md mx-auto">
-            Tell us your vision — we'll bring it to life.
+            Tell us your vision — we'll bring it to life. <br />
+            <span className="text-xs mt-2 block">(Minimum 30 pieces for Corporate/Bulk orders)</span>
           </p>
 
           {submitted ? (
@@ -104,7 +107,21 @@ Message: ${formData.message}`;
                 />
               </div>
 
-              {/* Message ONLY (Removed size + color palette) */}
+              {/* Engraving */}
+              <div>
+                <label className="block text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">
+                  Add Engraving <span className="normal-case tracking-normal text-muted-foreground/60">(optional)</span>
+                </label>
+                <input
+                  name="engraving"
+                  type="text"
+                  onChange={handleChange}
+                  className="w-full bg-transparent border-b border-border py-3 text-foreground focus:border-primary outline-none transition-colors"
+                  placeholder="Text or name to be engraved..."
+                />
+              </div>
+
+              {/* Message */}
               <div>
                 <label className="block text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">
                   Additional Message
@@ -135,7 +152,7 @@ Message: ${formData.message}`;
           <div className="max-w-3xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
               <p className="text-xs tracking-[0.2em] uppercase text-cream/40 mb-2">WhatsApp</p>
-              <p className="text-cream/80">+91 9831232374</p>
+              <p className="text-cream/80">+91 9330132374</p>
             </div>
             <div>
               <p className="text-xs tracking-[0.2em] uppercase text-cream/40 mb-2">Instagram</p>
