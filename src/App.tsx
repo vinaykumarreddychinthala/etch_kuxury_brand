@@ -11,6 +11,9 @@ import Process from "./pages/Process";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import ProductCare from "./pages/ProductCare";
+import Success from "./pages/Success";
+import Checkout from "./pages/Checkout";
+import OrderSummary from "./pages/OrderSummary";
 import NotFound from "./pages/NotFound";
 import { CartProvider } from "./contexts/CartContext";
 
@@ -40,6 +43,9 @@ const App = () => (
             <Route path="/faq" element={<FAQ />} />
             <Route path="/product-care" element={<ProductCare />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/order-summary" element={<OrderSummary />} />
+            <Route path="/success" element={<Success />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

@@ -11,7 +11,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { useCart, formatPrice } from "@/contexts/CartContext";
 import { ScrollArea } from "@/components/ui/scroll-area";
-
 export function CartDrawer() {
   const { items, removeFromCart, updateQuantity, cartTotal, totalItems } = useCart();
   const navigate = useNavigate();
@@ -133,7 +132,7 @@ export function CartDrawer() {
               className="w-full h-12 rounded-sm text-sm tracking-wide bg-[#2c2c2c] hover:bg-[#1a1a1a]"
               onClick={() => {
                 setOpen(false);
-                navigate("/contact");
+                navigate("/checkout");
               }}
             >
               PROCEED TO CHECKOUT
