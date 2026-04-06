@@ -125,7 +125,7 @@ app.post('/api/verify-payment', async (req, res) => {
         // 2. Send email via Nodemailer (Gmail)
         await transporter.sendMail({
           from: `"Etch Studio Orders" <${process.env.GMAIL_USER}>`,
-          to: 'lucifer.t01.963@gmail.com',
+          to: 'etchluxury@gmail.com',
           subject: `New Order Received — ${fullName}`,
           html: `
             <div style="font-family: 'Georgia', serif; max-width: 600px; margin: 0 auto; background: #fafaf9; padding: 40px; border: 1px solid #e5e5e5;">

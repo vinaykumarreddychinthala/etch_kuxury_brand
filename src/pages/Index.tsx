@@ -32,7 +32,7 @@ const craftFeatures = [
 ];
 
 const signaturePieces = [
-  { name: "Midnight Silver Tray", price: "₹4,500", image: productBlackSilver },
+  { name: "Midnight Silver Tray", price: "₹1", image: productBlackSilver },
   { name: "Ocean Drift Tray", price: "₹5,200", image: productOceanBlue },
   { name: "Monochrome Board", price: "₹3,800", image: productMonochrome },
   { name: "Noir Coaster Set", price: "₹1,800", image: productCoasters },

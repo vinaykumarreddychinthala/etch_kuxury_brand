@@ -133,7 +133,7 @@ const productsDatabase: Record<string, any> = {
   // ── Index ──
   "midnight-silver-tray": {
     title: "Midnight Silver Tray",
-    price: "₹4,500",
+    price: "₹1",
     images: [productBlackSilver, productMonochrome, productOceanBlue],
     colourOptions: [
       { name: "Teal", hex: "#4ab3b0", image: item1 },

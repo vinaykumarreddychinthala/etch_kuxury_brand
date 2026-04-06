@@ -18,7 +18,7 @@ import item4 from "@/assets/item4.jpeg";
 type Category = "All" | "Trays" | "Paddles & Boards" | "Coasters" | "Napkin Rings" | "Vases" | "Wall Art" | "Gift Bundles";
 
 const products = [
-  { name: "Midnight Silver Tray", price: "₹4,500", image: productBlackSilver, cat: "Trays" as Category },
+  { name: "Midnight Silver Tray", price: "₹1", image: productBlackSilver, cat: "Trays" as Category },
   { name: "Ocean Drift Tray", price: "₹5,200", image: productOceanBlue, cat: "Trays" as Category },
   { name: "Monochrome Board", price: "₹3,800", image: productMonochrome, cat: "Boards" as Category },
   { name: "Resin River Table", price: "₹28,000", image: productRiverTable, cat: "Tables" as Category },
