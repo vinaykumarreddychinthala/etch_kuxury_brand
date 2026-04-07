@@ -21,9 +21,9 @@ export default function Footer() {
                 }}
               />
             </Link>
-            <p className="font-heading text-lg italic text-cream/70 mb-4 max-w-sm">
+            {/* <p className="font-heading text-lg italic text-cream/70 mb-4 max-w-sm">
               Handcrafted with intention.
-            </p>
+            </p> */}
           </div>
 
           {/* Spacer */}

@@ -177,7 +177,7 @@ export default function AboutProcess() {
             {" "}them.
           </h1>
           <p className="reveal d3 text-muted-foreground max-w-lg mx-auto leading-relaxed text-sm">
-            Handcrafted resin art rooted in passion — born in the pandemic, Refined over time.
+            Handcrafted resin art rooted in passion — born in the pandemic, refined over time.
           </p>
         </section>
 
