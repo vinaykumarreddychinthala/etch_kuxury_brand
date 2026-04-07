@@ -125,9 +125,9 @@ export function CartDrawer() {
               <span className="text-sm font-medium">Subtotal</span>
               <span className="text-lg font-medium">{formatPrice(cartTotal)}</span>
             </div>
-            <p className="text-xs text-muted-foreground mb-6 text-center">
+            {/* <p className="text-xs text-muted-foreground mb-6 text-center">
               Shipping
-            </p>
+            </p> */}
             <Button 
               className="w-full h-12 rounded-sm text-sm tracking-wide bg-[#2c2c2c] hover:bg-[#1a1a1a]"
               onClick={() => {
