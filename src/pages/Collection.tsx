@@ -70,31 +70,43 @@ export default function Collection() {
             ))}
           </div>
 
-          {/* 🔥 3 COLUMN GRID */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {filtered.map((p) => (
-              <Link
-                key={p.name}
-                to={`/product/${p.name.replace(/\s+/g, "-").toLowerCase()}`}
-                className="group block transition-opacity duration-300 hover:opacity-90"
-              >
-                <div className="relative overflow-hidden aspect-square bg-secondary">
-                  <img
-                    src={p.image}
-                    alt={p.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
+          {/* Product Grid / Empty State */}
+          {filtered.length === 0 ? (
+            <div className="flex flex-col items-center justify-center py-24 text-center">
+              <p className="text-3xl mb-4">—</p>
+              <p className="font-heading text-xl text-muted-foreground font-light tracking-wide">
+                This collection is in the making.
+              </p>
+              <p className="text-sm text-muted-foreground/70 tracking-widest uppercase mt-2">
+                Check back shortly
+              </p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+              {filtered.map((p) => (
+                <Link
+                  key={p.name}
+                  to={`/product/${p.name.replace(/\s+/g, "-").toLowerCase()}`}
+                  className="group block transition-opacity duration-300 hover:opacity-90"
+                >
+                  <div className="relative overflow-hidden aspect-square bg-secondary">
+                    <img
+                      src={p.image}
+                      alt={p.name}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
 
-                <div className="mt-4">
-                  <h3 className="font-heading text-lg">{p.name}</h3>
-                  <p className="text-muted-foreground text-sm mt-1">
-                    Starting {p.price}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
+                  <div className="mt-4">
+                    <h3 className="font-heading text-lg">{p.name}</h3>
+                    <p className="text-muted-foreground text-sm mt-1">
+                      Starting {p.price}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
         </section>
       </div>
     </Layout>

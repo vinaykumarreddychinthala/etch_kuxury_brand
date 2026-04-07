@@ -6,6 +6,8 @@ import { useCart, formatPrice } from "@/contexts/CartContext";
 import { loadRazorpay } from "@/utils/loadRazorpay";
 import { toast } from "sonner";
 
+const WEST_BENGAL_VARIANTS = ["west bengal", "wb", "westbengal", "west-bengal"];
+
 export default function OrderSummary() {
   const { items, cartTotal, totalItems, clearCart } = useCart();
   const location = useLocation();
@@ -23,6 +25,13 @@ export default function OrderSummary() {
     return <Navigate to="/collection" replace />;
   }
 
+  // Shipping logic
+  const isWestBengal = WEST_BENGAL_VARIANTS.includes(
+    (shippingDetails.state || "").trim().toLowerCase()
+  );
+  const shippingCharge = isWestBengal ? 200 : 450;
+  const grandTotal = cartTotal + shippingCharge;
+
   const handlePayment = async () => {
     setIsProcessing(true);
     try {
@@ -37,7 +46,7 @@ export default function OrderSummary() {
       const orderRes = await fetch("/api/create-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount: cartTotal }),
+        body: JSON.stringify({ amount: grandTotal }),
       });
       const orderData = await orderRes.json();
       
@@ -64,7 +73,8 @@ export default function OrderSummary() {
               razorpay_signature: response.razorpay_signature,
               shippingDetails, // pass shipping details for email & db
               items, // pass items so backend knows what to email/store
-              total: cartTotal
+              total: grandTotal,
+              shippingCharge,
             }),
           });
           const verifyData = await verifyRes.json();
@@ -152,10 +162,28 @@ export default function OrderSummary() {
               ))}
             </div>
 
-            <div className="border-t border-[#d1d1d1] pt-6 mt-6">
-              <div className="flex justify-between items-center mb-6">
+            <div className="border-t border-[#d1d1d1] pt-6 mt-6 space-y-3">
+              {/* Subtotal */}
+              <div className="flex justify-between items-center text-sm">
+                <span className="text-muted-foreground uppercase tracking-widest">Subtotal</span>
+                <span className="text-foreground">{formatPrice(cartTotal)}</span>
+              </div>
+
+              {/* Shipping */}
+              <div className="flex justify-between items-center text-sm">
+                <span className="text-muted-foreground uppercase tracking-widest">
+                  Shipping
+                  <span className="ml-2 normal-case tracking-normal text-xs text-muted-foreground/70">
+                    ({isWestBengal ? "West Bengal" : "Outside West Bengal"})
+                  </span>
+                </span>
+                <span className="text-foreground">{formatPrice(shippingCharge)}</span>
+              </div>
+
+              {/* Grand Total */}
+              <div className="flex justify-between items-center pt-4 border-t border-[#d1d1d1]">
                 <span className="text-base text-muted-foreground font-medium uppercase tracking-widest">Total to pay</span>
-                <span className="text-2xl font-heading text-[#2c2c2c]">{formatPrice(cartTotal)}</span>
+                <span className="text-2xl font-heading text-[#2c2c2c]">{formatPrice(grandTotal)}</span>
               </div>
 
               <Button 
