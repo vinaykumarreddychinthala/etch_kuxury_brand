@@ -65,7 +65,7 @@ export default function Footer() {
             <a href="https://instagram.com/etch.luxury" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
               Instagram
             </a>
-            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+            <a href="https://wa.me/919330132374" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
               WhatsApp
             </a>
           </div>

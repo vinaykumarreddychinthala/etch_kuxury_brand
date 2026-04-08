@@ -372,18 +372,24 @@ export default function AboutProcess() {
             </svg>
             
             <h2 className="font-heading text-3xl md:text-4xl font-light tracking-wide mb-6 text-[#2c2c2c]">
-              Customer Service
+              Customer care
             </h2>
-            
+
             <p className="text-muted-foreground mb-12 leading-relaxed text-sm md:text-base max-w-4xl mx-auto">
-              For instant help, use our Live Chat. You can also email us at{" "}
-              <a href="mailto:etchstudio.in@gmail.com" className="underline hover:text-[#2c2c2c] transition-colors">
-                etchstudio.in@gmail.com
+              For any queries, please email us at{" "}
+              <a href="mailto:etchluxury@gmail.com" className="underline hover:text-[#2c2c2c] transition-colors">
+                etchluxury@gmail.com
+              </a>{" "}
+              and message us at{" "}
+              <a
+                href="https://wa.me/919330132374"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-[#2c2c2c] transition-colors"
+              >
+                +91 9330132374
               </a>
-              , or call or text us at{" "}
-              <a href="tel:+919330132374" className="underline hover:text-[#2c2c2c] transition-colors">
-                +91 93301 32374
-              </a>
+              . Business hours - All days - 10 am to 4 pm
             </p>
 
             {/* Pagination Style Dots */}
