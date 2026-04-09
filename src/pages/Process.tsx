@@ -376,11 +376,12 @@ export default function AboutProcess() {
             </h2>
 
             <p className="text-muted-foreground mb-12 leading-relaxed text-sm md:text-base max-w-4xl mx-auto">
-              For any queries, please email us at{" "}
+              For any queries,<br />
+              Please email us at{" "}
               <a href="mailto:etchluxury@gmail.com" className="underline hover:text-[#2c2c2c] transition-colors">
                 etchluxury@gmail.com
-              </a>{" "}
-              and message us at{" "}
+              </a><br />
+              Message us at{" "}
               <a
                 href="https://wa.me/919330132374"
                 target="_blank"
@@ -389,16 +390,10 @@ export default function AboutProcess() {
               >
                 +91 9330132374
               </a>
-              . Business hours - All days - 10 am to 4 pm
+              .<br />
+              Business hours - All days - 10 am to 4 pm
             </p>
 
-            {/* Pagination Style Dots */}
-            <div className="flex gap-4 justify-center items-center">
-              <div className="w-2.5 h-2.5 rounded-full border border-[#2c2c2c]"></div>
-              <div className="w-1.5 h-1.5 rounded-full bg-[#2c2c2c]"></div>
-              <div className="w-1.5 h-1.5 rounded-full bg-[#2c2c2c]"></div>
-              <div className="w-1.5 h-1.5 rounded-full bg-[#2c2c2c]"></div>
-            </div>
           </div>
         </section>
 

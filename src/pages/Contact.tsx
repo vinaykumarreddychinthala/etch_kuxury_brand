@@ -167,7 +167,7 @@ Message: ${formData.message}`;
             </div>
             <div>
               <p className="text-xs tracking-[0.2em] uppercase text-cream/40 mb-2">Email</p>
-              <p className="text-cream/80">hello@etch.luxury</p>
+              <p className="text-cream/80">etchluxury@gmail.com</p>
             </div>
           </div>
           <p className="text-center text-cream/30 text-xs tracking-widest uppercase mt-10">
