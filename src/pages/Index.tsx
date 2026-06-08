@@ -36,10 +36,18 @@ const signaturePieces = [
   { name: "Ocean Drift Tray", price: "₹5,200", image: productOceanBlue },
   { name: "Monochrome Board", price: "₹3,800", image: productMonochrome },
   { name: "Noir Coaster Set", price: "₹1,800", image: productCoasters },
-    { name: "Golden River Tray", price: "₹5,800", image: item1 },
+  { name: "Golden River Tray", price: "₹5,800", image: item1 },
   { name: "Walnut Glow Board", price: "₹4,200", image: item2 },
   { name: "Black Marble Resin Tray", price: "₹6,200", image: item3 },
   { name: "Emerald Flow Tray", price: "₹6,500", image: item4 },
+  // 🆕 New products from public folder
+  { name: "Pearl Drift Tray", price: "₹4,800", image: "/product1_1.png" },
+  { name: "Obsidian Flow Board", price: "₹5,500", image: "/product2_1.png" },
+  { name: "Copper Vein Tray", price: "₹6,000", image: "/product3_1.png" },
+  { name: "Ivory Marble Coaster", price: "₹2,200", image: "/product4_1.PNG" },
+  { name: "Sapphire Wave Tray", price: "₹5,900", image: "/product5_1.PNG" },
+  { name: "Amber Forest Board", price: "₹4,600", image: "/product6_1.PNG" },
+  { name: "Crimson Noir Tray", price: "₹5,300", image: "/product7_1.PNG" },
 ];
 
 export default function Index() {

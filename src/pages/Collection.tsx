@@ -25,11 +25,20 @@ const products = [
   { name: "Noir Coaster Set", price: "₹1,800", image: productCoasters, cat: "Gift Bundles" as Category },
   { name: "Custom Name Plaque", price: "₹2,500", image: productNamePlaque, cat: "Gift Bundles" as Category },
 
-  // 🔥 Added items (same as index)
+  // 🔥 Legacy items
   { name: "Golden River Tray", price: "₹5,800", image: item1, cat: "Trays" as Category },
   { name: "Walnut Glow Board", price: "₹4,200", image: item2, cat: "Boards" as Category },
   { name: "Black Marble Resin Tray", price: "₹6,200", image: item3, cat: "Trays" as Category },
   { name: "Emerald Flow Tray", price: "₹6,500", image: item4, cat: "Trays" as Category },
+
+  // 🆕 New products from public folder
+  { name: "Pearl Drift Tray", price: "₹4,800", image: "/product1_1.png", cat: "Trays" as Category },
+  { name: "Obsidian Flow Board", price: "₹5,500", image: "/product2_1.png", cat: "Paddles & Boards" as Category },
+  { name: "Copper Vein Tray", price: "₹6,000", image: "/product3_1.png", cat: "Trays" as Category },
+  { name: "Ivory Marble Coaster", price: "₹2,200", image: "/product4_1.PNG", cat: "Coasters" as Category },
+  { name: "Sapphire Wave Tray", price: "₹5,900", image: "/product5_1.PNG", cat: "Trays" as Category },
+  { name: "Amber Forest Board", price: "₹4,600", image: "/product6_1.PNG", cat: "Paddles & Boards" as Category },
+  { name: "Crimson Noir Tray", price: "₹5,300", image: "/product7_1.PNG", cat: "Trays" as Category },
 ];
 
 const categories: Category[] = ["All" , "Trays" , "Paddles & Boards" , "Coasters" , "Napkin Rings" , "Vases" , "Wall Art" , "Gift Bundles"];

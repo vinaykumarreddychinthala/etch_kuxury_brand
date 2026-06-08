@@ -237,6 +237,50 @@ const productsDatabase: Record<string, any> = {
       { name: "Terracotta", hex: "#c07850", image: productMonochrome },
     ],
   },
+
+  // ── New products (public folder) ──
+  "pearl-drift-tray": {
+    title: "Pearl Drift Tray",
+    price: "₹4,800",
+    images: ["/product1_1.png", "/product1_2.png", "/product1_3.png"],
+    colourOptions: defaultColourOptions,
+  },
+  "obsidian-flow-board": {
+    title: "Obsidian Flow Board",
+    price: "₹5,500",
+    images: ["/product2_1.png", "/product2_2.png", "/product2_3.png"],
+    colourOptions: defaultColourOptions,
+  },
+  "copper-vein-tray": {
+    title: "Copper Vein Tray",
+    price: "₹6,000",
+    images: ["/product3_1.png", "/product3_2.png", "/product3_3.png"],
+    colourOptions: defaultColourOptions,
+  },
+  "ivory-marble-coaster": {
+    title: "Ivory Marble Coaster",
+    price: "₹2,200",
+    images: ["/product4_1.PNG", "/product4_2.PNG"],
+    colourOptions: defaultColourOptions,
+  },
+  "sapphire-wave-tray": {
+    title: "Sapphire Wave Tray",
+    price: "₹5,900",
+    images: ["/product5_1.PNG", "/product5_2.PNG", "/product5_3.PNG"],
+    colourOptions: defaultColourOptions,
+  },
+  "amber-forest-board": {
+    title: "Amber Forest Board",
+    price: "₹4,600",
+    images: ["/product6_1.PNG", "/product6_2.PNG", "/product6_3.PNG"],
+    colourOptions: defaultColourOptions,
+  },
+  "crimson-noir-tray": {
+    title: "Crimson Noir Tray",
+    price: "₹5,300",
+    images: ["/product7_1.PNG", "/product7_2.PNG"],
+    colourOptions: defaultColourOptions,
+  },
 };
 
 const getProductDetails = (id: string | undefined) => {
@@ -380,8 +424,8 @@ export default function Product() {
 
             {/* Main image — touch swipe enabled */}
             <div
-              className="relative w-full overflow-hidden bg-secondary"
-              style={{ aspectRatio: "1 / 1", maxHeight: "600px" }}
+              className="relative w-full overflow-hidden bg-[#f7f5f2]"
+              style={{ maxHeight: "620px", minHeight: "320px" }}
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
@@ -390,8 +434,8 @@ export default function Product() {
                 key={displayImage}
                 src={displayImage}
                 alt={product.title}
-                className="img-fade w-full h-full object-cover"
-                style={{ userSelect: "none", WebkitUserSelect: "none" }}
+                className="img-fade w-full object-contain"
+                style={{ userSelect: "none", WebkitUserSelect: "none", maxHeight: "620px", display: "block" }}
                 draggable={false}
               />
 
